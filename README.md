@@ -12,3 +12,4 @@ tar xzf ./actions-runner-linux-x64-2.294.0.tar.gz
 
 Now upload GitHub Action CICD.yml file
 Make  runs-on: self-hosted.
+.
