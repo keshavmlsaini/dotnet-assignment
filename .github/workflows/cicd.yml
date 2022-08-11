@@ -1,0 +1,32 @@
+name: Push-to-EC2
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    types: [closed]
+    branches:
+     - main
+jobs:
+  ci:
+    runs-on: self-hosted
+    steps:
+    - name: Checkout the code
+      uses: actions/checkout@v1
+#     - name: Deploy to my EC2 instance
+#       uses: easingthemes/ssh-deploy@v2.1.5
+      env:
+        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        REMOTE_HOST: “3.108.66.189”
+        REMOTE_USER: “ubuntu”
+        TARGET: “/home/ubuntu/”
+    - run: pwd
+    - run: ls
+    - name: Run build
+      run: |
+        
+        sudo docker stop ks || true
+        sudo docker rm $(sudo docker ps -a -q) || true
+        sudo docker rmi -f $(sudo docker images -a -q) || true
+        sudo docker system prune || true
+        sudo docker build  -t test:v1 .
+        sudo docker run -d -p 80:80  --name=ks test:v1
