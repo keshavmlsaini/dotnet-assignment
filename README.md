@@ -1,6 +1,9 @@
 # dotnet-assignment
-Launch ec2 instance over AWS cloud.
-Install Docker onn Ec2 instance. 
+
+Launch ec2 instance over AWS cloud
+
+Install Docker onn Ec2 instance
+
 Create Dockerfile for dotnet application.
 Go to settings ---> Actions --->runners ---> create new self hosted runner
 Run on ec2 instancer root user
