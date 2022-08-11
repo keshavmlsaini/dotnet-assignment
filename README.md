@@ -8,7 +8,7 @@ Create Dockerfile for dotnet application.
 
 Go to settings ---> Actions --->runners ---> create new self hosted runner
 
-# Run on ec2 instancer root user
+# Run on ec2 instancer non-root user
 mkdir actions-runner && cd actions-runner
 
 curl -o actions-runner-linux-x64-2.294.0.tar.gz -L https://github.com/actions/runner/releases/download/v2.294.0/actions-runner-linux-x64-2.294.0.tar.gz
