@@ -19,6 +19,14 @@ tar xzf ./actions-runner-linux-x64-2.294.0.tar.gz
 
 ./config.sh --url https://github.com/keshavmlsaini/dotnet-assignment --token #**#*R********
 
+./run.sh
+
+./svc.sh install
+
+sudo ./svc.sh install
+
+sudo ./svc.sh start
+
 
 # Now upload GitHub Action CICD.yml file
 
